@@ -22,11 +22,11 @@ RUN pip install \
     pyodbc
 
 RUN curl \
-    https://download.oracle.com/otn_software/linux/instantclient/instantclient-basiclite-linuxx64.zip \
-    -o instaclient.zip
-RUN unzip instaclient.zip
-RUN mkdir -p /opt/oracle
-RUN mv instaclient* /opt/oracle/instaclient
+    https://download.oracle.com/otn_software/linux/instantclient/185000/instantclient-basiclite-linux.x64-18.5.0.0.0dbru.zip?xd_co_f=91cb36af-209f-4d60-a84c-98c87fe76acd \
+    -o instantclient.zip
+RUN unzip instantclient.zip
+RUN mkdir -p /opt/oracle/instantclient
+RUN mv instantclient_18_5/* /opt/oracle/instantclient
 
 
 FROM python:3.8-slim
